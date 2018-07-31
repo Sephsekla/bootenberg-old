@@ -3,6 +3,9 @@
  */
 import classnames from 'classnames';
 
+import './style.scss';
+import './editor.scss';
+
 const { __ } = wp.i18n;
 
 const { Fragment } = wp.element;
@@ -20,6 +23,7 @@ export default registerBlockType(
     {
         title: __( 'Bootstrap Column', 'bootenberg' ),
         description: __( 'Custom Column Block.', 'bootenberg'),
+        parent: [ 'bootenberg/row' ],
         category: 'layout',
         icon: 'columns',
         keywords: [
@@ -27,6 +31,7 @@ export default registerBlockType(
         ],
         attributes: {
         },
+        
 
         edit: props => {
 
