@@ -40,6 +40,14 @@ function enqueue_assets() {
 		[ 'wp-blocks' ],
 		filemtime( _get_plugin_directory() . $style_path )
 	);
+
+	$layout_path = '/assets/css/blocks.layout.css';
+	wp_enqueue_style(
+		'bootenberg-layout',
+		_get_plugin_url() . $lahyout_path,
+		[ 'wp-blocks' ],
+		filemtime( _get_plugin_directory() . $layout_path )
+	);
 }
 
 add_action( 'enqueue_block_assets', __NAMESPACE__ . '\enqueue_frontend_assets' );

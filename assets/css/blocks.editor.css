@@ -1,2 +1,6 @@
-.wp-block-bootenberg-row{border:2px dashed #888;padding:1rem}
-.wp-block-bootenberg-column{border:2px dashed #888;padding:1rem}
+.wp-block-bootenberg-row {
+  border: 2px dashed #888888;
+  padding: 1rem; }
+.wp-block-bootenberg-column {
+  border: 2px dashed #888888;
+  padding: 1rem; }

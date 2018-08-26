@@ -6,6 +6,9 @@ const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 const blocksCSSPlugin = new ExtractTextPlugin( {
   filename: './assets/css/blocks.style.css',
 } );
+const layoutCSSPlugin = new ExtractTextPlugin( {
+  filename: './assets/css/blocks.layout.css',
+} );
 const editBlocksCSSPlugin = new ExtractTextPlugin( {
   filename: './assets/css/blocks.editor.css',
 } );
@@ -59,10 +62,15 @@ module.exports = {
         test: /editor\.s?css$/,
         use: editBlocksCSSPlugin.extract( extractConfig ),
       },
+      {
+        test: /layout\.s?css$/,
+        use: layoutCSSPlugin.extract( extractConfig ),
+      },
     ],
   },
   plugins: [
     blocksCSSPlugin,
     editBlocksCSSPlugin,
+    layoutCSSPlugin,
   ],
 };

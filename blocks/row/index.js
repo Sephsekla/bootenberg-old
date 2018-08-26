@@ -5,6 +5,7 @@ import classnames from 'classnames';
 
 import './style.scss';
 import './editor.scss';
+import './layout.scss';
 
 const { __ } = wp.i18n;
 
