@@ -44,7 +44,7 @@ function enqueue_assets() {
 	$layout_path = '/assets/css/blocks.layout.css';
 	wp_enqueue_style(
 		'bootenberg-layout',
-		_get_plugin_url() . $lahyout_path,
+		_get_plugin_url() . $layout_path,
 		[ 'wp-blocks' ],
 		filemtime( _get_plugin_directory() . $layout_path )
 	);

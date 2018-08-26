@@ -40,8 +40,15 @@ export default registerBlockType(
           const { attributes: { placeholder },
                 className, setAttributes,  } = props;
 
+                const classes = classnames(
+                  className,
+                  { 'row': true },
+                );
+
+                
+
           return (
-          <div className={ className }>
+          <div className={ classes }>
 
   <InnerBlocks
     allowedBlocks={ ALLOWED_BLOCKS }
@@ -53,8 +60,12 @@ export default registerBlockType(
         },
         save: props => {
           const { attributes: { className }, setAttributes } = props;
+          const classes = classnames(
+            className,
+            { 'row': true },
+          );
           return (
-            <div className={ className }>
+            <div className={ classes }>
               <InnerBlocks.Content />
             </div>
           );

@@ -38,9 +38,13 @@ export default registerBlockType(
 
           const { attributes: { placeholder },
                 className, setAttributes,  } = props;
+                const classes = classnames(
+                  className,
+                  { 'col-md-6': true },
+                );
 
           return (
-          <div className={ className }>
+          <div className={ classes }>
 
   <InnerBlocks/>
 
@@ -49,8 +53,12 @@ export default registerBlockType(
         },
         save: props => {
           const { attributes: { className }, setAttributes } = props;
+          const classes = classnames(
+            className,
+            { 'col-md-6': true },
+          );
           return (
-            <div className={ className }>
+            <div className={ classes }>
               <InnerBlocks.Content />
             </div>
           );
