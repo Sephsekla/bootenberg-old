@@ -17,7 +17,11 @@ const { InnerBlocks } = wp.editor;
 
 const ALLOWED_BLOCKS = [ 'bootenberg/column' ];
 
-const TEMPLATE = [ [ 'bootenberg/column', {}, [] ] , [ 'bootenberg/column', {}, [] ] ];
+const TEMPLATE = [ [ 'bootenberg/column', {}] , [ 'bootenberg/column', {}] ];
+
+/*const TEMPLATE = [ 
+  [ 'bootenberg/column', {} ]
+ ];*/
 
 /**
  * Register example block
@@ -26,7 +30,7 @@ export default registerBlockType(
     'bootenberg/row',
     {
         title: __( 'Bootstrap Row', 'bootenberg' ),
-        description: __( 'Custom Column Block.', 'bootenberg'),
+        description: __( 'Custom Row Block.', 'bootenberg'),
         category: 'layout',
         icon: 'columns',
         keywords: [
@@ -49,11 +53,12 @@ export default registerBlockType(
 
           return (
           <div className={ classes }>
+          <span>BOOTSTRAP ROW</span>
 
-{!isSelected && (<InnerBlocks
+<InnerBlocks
     allowedBlocks={ ALLOWED_BLOCKS }
-    template={ TEMPLATE }
-/>)}
+    ctemplate={ TEMPLATE }
+/>
 
 
           </div>

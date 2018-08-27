@@ -15,7 +15,7 @@ const { registerBlockType } = wp.blocks;
 
 const { InnerBlocks,  InspectorControls } = wp.editor;
 
-const attributes = {selectControl: {
+const attributes = {xsControl: {
   type: 'string',
 },}
 
@@ -47,35 +47,36 @@ export default registerBlockType(
 
         edit: props => {
 
-          const { attributes: { selectControl },
+          const { attributes: { xsControl},
                 className, setAttributes,  } = props;
                 const classes = classnames(
                   className,
-                  { 'col-md-6': true },
+                  { 'col-md-6': true},
+                  xsControl
                 );
 
           return [
 
             <InspectorControls>
                 <PanelBody
-                    title={ __( 'Panel Body Title', 'jsforwpblocks' ) }
+                    title={ __( 'Panel Body Title', 'bootenberg' ) }
                     initialOpen={ false }
                 >
                     <PanelRow>
-                        <p>{ __( 'Panel Body Copy', 'jsforwpblocks' ) }</p>
+                        <p>{ __( 'Panel Body Copy', 'bootenberg' ) }</p>
                     </PanelRow>
                 </PanelBody>
 
                 <PanelBody>
                     <SelectControl
-                        label={ __( 'Select Control', 'jsforwpblocks' ) }
-                        value={ selectControl }
+                        label={ __( 'Mobile Width', 'bootenberg' ) }
+                        value={ xsControl }
                         options={ [
-                            { value: 'a', label: __( 'Option A', 'jsforwpblocks' ) },
-                            { value: 'b', label: __( 'Option B', 'jsforwpblocks' ) },
-                            { value: 'c', label: __( 'Option C', 'jsforwpblocks' ) },
+                            { value: 'a', label: __( 'Option A', 'bootenberg' ) },
+                            { value: 'b', label: __( 'Option B', 'bootenberg' ) },
+                            { value: 'c', label: __( 'Option C', 'bootenberg' ) },
                         ] }
-                        onChange={ selectControl => setAttributes( { selectControl } ) }
+                        onChange={ xsControl => setAttributes( {xsControl } ) }
                     />
                 </PanelBody>
 
@@ -90,10 +91,11 @@ export default registerBlockType(
           ];
         },
         save: props => {
-          const { attributes: { className }, setAttributes } = props;
+          const { attributes:  { xsControl}, className, setAttributes } = props;
           const classes = classnames(
             className,
             { 'col-md-6': true },
+            xsControl
           );
           return (
             <div className={ classes }>
