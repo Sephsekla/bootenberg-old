@@ -38,7 +38,7 @@ export default registerBlockType(
         edit: props => {
 
           const { attributes: { placeholder },
-                className, setAttributes,  } = props;
+                className, setAttributes, isSelected  } = props;
 
                 const classes = classnames(
                   className,
@@ -50,10 +50,11 @@ export default registerBlockType(
           return (
           <div className={ classes }>
 
-  <InnerBlocks
+{!isSelected && (<InnerBlocks
     allowedBlocks={ ALLOWED_BLOCKS }
     template={ TEMPLATE }
-/>
+/>)}
+
 
           </div>
             );
